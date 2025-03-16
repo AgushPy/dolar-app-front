@@ -15,7 +15,7 @@ export const useDolarStore = create<UseDolarStore>( ( set ) => ( {
   fetchDolar: async () => {
     set( { isLoading: true } );
     try {
-      const { data } = await axios.get<Dolar[]>( "http://localhost:3000/api/scrape/dolar" );
+      const { data } = await axios.get<Dolar[]>(  `${process.env.NEXT_PUBLIC_API_URL}/scrape/dolar`  );
       set( { dolarsInfo: data } );
     } catch ( error ) {
       console.error( "Error in get data", error );
