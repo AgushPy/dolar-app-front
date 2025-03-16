@@ -36,7 +36,10 @@ export default function Home() {
           :
           (
             <Grid2 container spacing={ 3 } sx={ { mt: 3, justifyContent: "center" } }>
-              { dolarsInfo?.map( ( dolar, index ) => (
+              { dolarsInfo.length === 0 ? 
+               <Typography sx={{ color: "white", fontSize: 20}}>No se encuentran elementos</Typography>
+              :
+              dolarsInfo?.map( ( dolar, index ) => (
                 <DolarCard dolar={ dolar } key={ index } />
               ) ) }
             </Grid2>
