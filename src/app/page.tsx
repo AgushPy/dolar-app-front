@@ -22,7 +22,7 @@ export default function Home() {
   useEffect( () => {
     fetchDolar();
 
-    const interval = setInterval(fetchDolar, 15000);
+    const interval = setInterval(fetchDolar, 300000);
 
     return () => clearInterval(interval);
   }, [] );
