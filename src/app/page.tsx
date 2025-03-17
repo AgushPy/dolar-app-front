@@ -40,7 +40,7 @@ export default function Home() {
                <Typography sx={{ color: "white", fontSize: 20}}>No se encuentran elementos</Typography>
               :
               dolarsInfo?.map( ( dolar, index ) => (
-                <DolarCard dolar={ dolar } key={ index } />
+                Object.keys(dolar).length !== 0 && <DolarCard dolar={dolar} key={index} />
               ) ) }
             </Grid2>
 
