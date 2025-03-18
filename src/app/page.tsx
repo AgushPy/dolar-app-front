@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import { useEffect } from 'react';
-import { Button, CircularProgress, Typography, Grid, Grid2 } from '@mui/material';
+import { Button, CircularProgress, Typography, Grid, Grid2, LinearProgress } from '@mui/material';
 import Link from 'next/link';
 import { DolarCard } from './components/DolarCard';
 import { useDolarStore } from './storage/useDolarStorage';
@@ -33,7 +33,7 @@ export default function Home() {
       <main className={ styles.main }>
         <h1>Cotización</h1>
         { isLoading ?
-          ( <CircularProgress sx={{ color: 'white' }} /> )
+          ( <LinearProgress color={"secondary"} /> )
           :
           (
             <Grid2 container spacing={ 3 } sx={ { mt: 3, justifyContent: "center" } }>
@@ -55,7 +55,7 @@ export default function Home() {
           Make by Agus. You can see my work in my github profile
         </Typography>
         <Link href={ 'https://github.com/AgushPy' } passHref>
-          <Button size="small" variant="text" color="primary">
+          <Button size="small" variant="text" color="secondary">
             AgushPy
           </Button>
         </Link>
