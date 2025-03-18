@@ -10,7 +10,8 @@ export interface Dolar {
   buyPrice: string,
   sellPrice: string,
   variation: string,
-  source: string;
+  source: string,
+  sourcePlainText : string,
 }
 
 
@@ -30,7 +31,7 @@ export default function Home() {
   return (
     <div className={ styles.page }>
       <main className={ styles.main }>
-        <h1>Prices</h1>
+        <h1>Exchange</h1>
         { isLoading ?
           ( <CircularProgress sx={{ color: 'white' }} /> )
           :

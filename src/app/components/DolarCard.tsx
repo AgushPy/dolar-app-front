@@ -38,7 +38,7 @@ export const DolarCard = ({dolar} : DolarCardProps) => {
             <CardActions>
               <Link href={dolar?.source} passHref>
                 <Button size="small" variant="text" color="primary">
-                  Fuente
+                  {dolar?.sourcePlainText}
                 </Button>
               </Link>
             </CardActions>
