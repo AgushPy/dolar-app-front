@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className={ styles.page }>
       <main className={ styles.main }>
-        <h1>Exchange</h1>
+        <h1>Conversión</h1>
         { isLoading ?
           ( <CircularProgress sx={{ color: 'white' }} /> )
           :
