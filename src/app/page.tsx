@@ -11,7 +11,7 @@ export interface Dolar {
   sellPrice: string,
   variation: string,
   source: string,
-  sourcePlainText : string,
+  sourcePlainText: string,
 }
 
 
@@ -23,9 +23,9 @@ export default function Home() {
   useEffect( () => {
     fetchDolar();
 
-    const interval = setInterval(fetchDolar, 300000);
+    const interval = setInterval( fetchDolar, 300000 );
 
-    return () => clearInterval(interval);
+    return () => clearInterval( interval );
   }, [] );
 
   return (
@@ -33,16 +33,20 @@ export default function Home() {
       <main className={ styles.main }>
         <h1>Cotización</h1>
         { isLoading ?
-          ( <LinearProgress color={"secondary"} /> )
+          (
+            <div style={ { width: '100%', padding: '10px' } }>
+              <LinearProgress color={ "secondary" } />
+            </div>
+          )
           :
           (
             <Grid2 container spacing={ 3 } sx={ { mt: 3, justifyContent: "center" } }>
-              { dolarsInfo.length === 0 ? 
-               <Typography sx={{ color: "white", fontSize: 20}}>No se encuentran elementos</Typography>
-              :
-              dolarsInfo?.map( ( dolar, index ) => (
-                Object.keys(dolar).length !== 0 && <DolarCard dolar={dolar} key={index} />
-              ) ) }
+              { dolarsInfo.length === 0 ?
+                <Typography sx={ { color: "white", fontSize: 20 } }>No se encuentran elementos</Typography>
+                :
+                dolarsInfo?.map( ( dolar, index ) => (
+                  Object.keys( dolar ).length !== 0 && <DolarCard dolar={ dolar } key={ index } />
+                ) ) }
             </Grid2>
 
           )
@@ -51,7 +55,7 @@ export default function Home() {
 
       </main>
       <footer className={ styles.footer }>
-        <Typography sx={{ color: "white", fontSize: 16 }}>
+        <Typography sx={ { color: "white", fontSize: 16 } }>
           Make by Agus. You can see my work in my github profile
         </Typography>
         <Link href={ 'https://github.com/AgushPy' } passHref>
